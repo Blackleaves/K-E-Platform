@@ -20,7 +20,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <!--     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,700" rel="stylesheet"> -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,800" rel="stylesheet">
 </head>
 <body>
 	<header>
@@ -34,13 +34,13 @@
 				<div class="login desktop"><a href="">Log In</a></div>
 				<div class="register desktop"><a href="">Register</a></div>
 				<div class="language desktop">EN</div>
-				<div class="cart"><i class="fas fa-shopping-cart"></i> 0</div>
+				<a href="" target="_blank"><div class="cart"><img src="static/images/icons/cart.svg" /> 0</div></a>
 			</div>
 		</div>
 		<div class="second-header">
 			<div class="wrapper">
 				<div class="developer">
-					<img src class="dev-logo">
+					<img src="static/images/product/studio-logo.png" class="dev-logo">
 					<span class="dev-title">KONSTRUCTORS</span>
 				</div>
 				<nav>
@@ -52,10 +52,10 @@
 					<div class="nav-point language mobile">EN</div>
 				</nav>
 				<div class="social">
-					<div class="facebook"><a href="" target="_blank"><i class="fab fa-facebook-square"></i> <span class="social-numbers">17,431</span></a></div>
-					<div class="twitter"><a href="" target="_blank"><i class="fab fa-twitter"></i> <span class="social-numbers">5,819</span></a></div>
-					<div class="youtube"><a href="" target="_blank"><i class="fab fa-youtube"></i> <span class="social-numbers">246</span></a></div>
-					<div class="website"><a href="" target="_blank"><i class="fas fa-link"></i> Website</a></div>
+					<div class="facebook"><a href="" target="_blank"><img src="static/images/icons/facebook.svg" /> <span class="social-numbers">17,431</span></a></div>
+					<div class="twitter"><a href="" target="_blank"><img src="static/images/icons/twitter.svg" /> <span class="social-numbers">5,819</span></a></div>
+					<div class="youtube"><a href="" target="_blank"><img src="static/images/icons/youtube.svg" /> <span class="social-numbers">246</span></a></div>
+					<div class="website"><a href="" target="_blank"><img src="static/images/icons/link.svg" /> Website</a></div>
 				</div>
 			</div>
 		</div>
@@ -70,7 +70,7 @@
 				</div>
 				<div class="user-rating">
 					<div class="user-score">
-						<span class="good-score"><i class="fas fa-smile"></i> 74%</span> | Very Positive
+						<span class="good-score"><img src="static/images/icons/smile1.svg" /> 74%</span> | Very Positive
 					</div>
 					<div class="user-rating-count">
 						1231 Steam Reviews
@@ -82,17 +82,48 @@
 				<div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
 			</div>
 
-			<div class="buy-it-block"></div>
+			<div id="buy-it-block" class="buy-it-block">
+				<img src="static/images/product/banner.jpg" class="banner" />
+				<div class="padding">
+					<div class="platforms clearfix">
+						<div class="platform-tags">
+							<div class="tag"><img src="static/images/icons/windows-logo.svg" /> Windows</div>
+							<div class="tag"><img src="static/images/icons/mac-os-logo.svg" /> Mac</div>
+							<div class="tag"><img src="static/images/icons/steam-logo.svg" /> Steam</div>
+						</div>
+					</div>
+					<div class="description">Cuphead is a classic run and gun action game heavily focused on boss battles.</div>
+					<div class="genres clearfix">
+						<div class="genre-tags">
+							<div class="tag">Action</div>
+							<div class="tag">Indie</div>
+							<div class="tag">Retro</div>
+						</div>
+					</div>
+					<div class="price clearfix">
+						<div class="discount">-20%</div>
+						<div class="current-price">$15.99</div>
+						<div class="start-price">$19.99 USD</div>
+						<div class="countdown">This deal ends in <span class="time">20:50:57</span></div>
+					</div>
+					<button class="add-to-cart">Add to cart</button>
+					<div class="share">
+						Share 
+						<a class="facebook">Share</a> 
+						<a class="twitter">Tweet</a>
+					</div>
+				</div>
+			</div>
 
 			<div class="content-description">
 				<div class="slideshow">
 					<div class="shown-image"></div>
 					<div class="slides">
-						<div class="slide"></div>
-						<div class="slide"></div>
-						<div class="slide"></div>
-						<div class="slide"></div>
-						<div class="slide"></div>
+						<div class="slide slide-1"></div>
+						<div class="slide slide-2"></div>
+						<div class="slide slide-3"></div>
+						<div class="slide slide-4"></div>
+						<div class="slide slide-5"></div>
 					</div>
 				</div>
 				<div class="main-description">
@@ -120,7 +151,7 @@
 									<div class="tag"><i class="fab fa-steam-symbol"></i> Steam</div>
 								</div>
 							</div>
-							<div class="genres">
+							<div class="genres clearfix">
 								<div class="title">GENRE</div>
 								<div class="genre-tags">
 									<div class="tag">Action</div>
@@ -131,7 +162,7 @@
 						</div>
 					</div>
 					<div class="separator"></div>
-					<div class="wrap game-description">
+					<div class="game-description wrap">
 						<div class="title">Game description</div>
 						<div>
 							Cuphead is a classic run and gun action game heavily focused on boss battles. Inspired by cartoons of the 1930s, the visuals and audio are painstakingly created with the same techniques of the era, i.e. traditional hand drawn cel animation, watercolor backgrounds, and original jazz recordings.
@@ -139,7 +170,7 @@
 						<div>
 							Play as Cuphead or Mugman (in single player or local co-op) as you traverse strange worlds, acquire new weapons, learn powerful super moves, and discover hidden secrets while you try to pay your debt back to the devil!
 						</div>
-						<img class="game-description-images" src="">
+						<img class="game-description-images" src="static/images/product/description-image.jpg">
 						<div>
 							Join Cuphead and Mugman as they battle the Devil in this throwback to the 1940’s cartoon era. In this 2D side scrolling platformer, control Cuphead and his partner in crime, Mugman as they battle the devil’s minions in order to save their souls, who said gambling with the devil was easy? 
 						</div>
@@ -149,21 +180,124 @@
 					</div>
 					<div class="separator"></div>
 					<div class="game-requirements">
-						
+						<div class="wrap title">Minimum Requirements</div>
+
+						<div class="tabset">
+							<!-- Tab 1 -->
+							<input type="radio" name="tabset" id="tab1" aria-controls="windows-requirements" checked>
+							<label for="tab1"><i class="fab fa-windows"></i> Windows</label>
+							<!-- Tab 2 -->
+							<input type="radio" name="tabset" id="tab2" aria-controls="mac-requirements">
+							<label for="tab2"><i class="fab fa-apple"></i> Mac</label>
+							<div class="tab-panels">
+								<section id="windows-requirements" class="tab-panel wrap">
+									<div class="subtitle">OS:</div>
+									<div class="requirement">Windows 7</div>
+									<div class="subtitle">Processor:</div>
+									<div class="requirement">Intel Core2 Duo E8400 /3.00Hz or AMD Athlon 64 X2 6000+ /3.00Hz or higher</div>
+									<div class="subtitle">Memory:</div>
+									<div class="requirement">2 GB RAM</div>
+									<div class="subtitle">Graphics:</div>
+									<div class="requirement">Geforce 9600 GT or AMD HD 3870 512MB or higher</div>
+									<div class="subtitle">Disk Space:</div>
+									<div class="requirement">20 GB available space</div>
+									<div class="subtitle">API:</div>
+									<div class="requirement">DirectX 9</div>
+									<div class="subtitle">Miscellaneous:</div>
+									<div class="requirement">1024 x 768 pixels or higher desktop resolution</div>
+								</section>
+								<section id="mac-requirements" class="tab-panel wrap">
+									<div class="subtitle">OS:</div>
+									<div class="requirement">something</div>
+									<div class="subtitle">Processor:</div>
+									<div class="requirement">something</div>
+									<div class="subtitle">Memory:</div>
+									<div class="requirement">2 GB RAM</div>
+									<div class="subtitle">Graphics:</div>
+									<div class="requirement">something</div>
+									<div class="subtitle">Disk Space:</div>
+									<div class="requirement">20 GB available space</div>
+									<div class="subtitle">API:</div>
+									<div class="requirement">something</div>
+									<div class="subtitle">Miscellaneous:</div>
+									<div class="requirement">1024 x 768 pixels or higher desktop resolution</div>
+								</section>
+							</div>
+						</div>
 					</div>
-					<div class="how-to-activate">
-						
+					<div class="separator"></div>
+					<div class="how-to-activate wrap">
+						<div class="title">How to activate the key?</div>
+						<div class="additional-text">Activate with Steam:</div>
+						<ul>
+							<li>• <a class="link" href="" target="_blank">Download</a> and install the Steam client on your PC, then sign up and log in.</li>
+							<li>• Locate the Steam key in your cdkeys.com confirmation email, and copy it to your clipboard by pressing “Ctrl+C”.</li>
+							<li>• Open the Steam client and locate the “+ ADD A GAME...” button on the bottom left of the window. Click this and choose the “Activate a Product on Steam…” option.</li>
+							<li>• Paste the key from your clipboard in the “Product Code” section when asked, and follow the rest of the prompts to add the game to your library.</li>
+							<li>• Your game is now viewable in the “Library” tab, and is available to download/install when you’re ready!</li>
+						</ul>
+						<div class="additional-text">You can find additional support for the Steam client <a class="link" href="" target="_blank">here</a>.</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</content>
 	<footer>
-		<div class="first-footer"></div>
+		<div class="first-footer">
+			<div class="wrapper">
+				<div class="subscribe-text">Subscribe to receive exclusive news and offers</div>
+				<input type="email" class="subscribe-email" name="subscribe-email" placeholder="Type your email here" />
+				<button class="subscribe-button">Subscribe</button>
+			</div>
+		</div>
 		<div class="separator"></div>
-		<div class="second-footer"></div>
-		<div class="copyright"></div>
+		<div class="second-footer">
+			<div class="wrapper">
+				<div class="know-us">
+					<div class="title">Get to know us</div>
+					<a href="" target="_blank">About Us</a>
+					<a href="" target="_blank">Privacy Policy</a>
+					<a href="" target="_blank">Terms of Service</a>
+				</div>
+				<div class="contacts">
+					<div class="title">Contacts</div>
+					<a href="" target="_blank">support@platform.com</a>
+					<a href="" target="_blank">Facebook</a>
+					<a href="" target="_blank">Twitter</a>
+					<a href="" target="_blank">Youtube</a>
+					<a href="" target="_blank">Discord</a>
+				</div>
+				<div class="ways-to-pay">
+					<div class="title">Ways to Pay</div>
+					<a href="" target="_blank">PayPal</a>
+					<a href="" target="_blank">MasterCard</a>
+					<a href="" target="_blank">Maestro</a>
+					<a href="" target="_blank">Visa</a>
+					<a href="" target="_blank">American Express</a>
+				</div>
+				<div class="trustpilot">
+					<img src="static/images/icons/trustpilot2.png" />
+				</div>
+			</div>
+		</div>
+		<div class="copyright"><div class="wrapper">© Plarform. All Rights Reserved.</div></div>
 	</footer>
 
+<script>
+window.ready = function() {myFunction()};
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  if (winScroll < 295) {
+  	$('#buy-it-block').addClass('on-top').removeClass('on-flow').removeClass('on-bottom');
+  } else {
+  	$('#buy-it-block').addClass('on-flow').removeClass('on-top').removeClass('on-bottom');
+  	if (winScroll > 2465) {
+  		$('#buy-it-block').addClass('on-bottom').removeClass('on-top').removeClass('on-flow');
+  	}
+  }
+}
+</script>
 </body>
 </html>
