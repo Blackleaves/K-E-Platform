@@ -83,7 +83,7 @@ header a, header a:visited, header a:active {color: #fff; transition: 0.25s;}
 
 /*CONTENT START*/
 content {display: block; width: 100%; color: #fff;}
-content .wrapper {display: block; width: 1170px; margin: 0 auto; padding: 35px 0 50px; box-sizing: border-box;
+content .wrapper {display: block; max-width: 1170px; margin: 0 auto; padding: 35px 0 50px; box-sizing: border-box;
 	display: grid; grid-template-columns: 1fr 370px; grid-template-rows: 70px auto; grid-column-gap: 30px; grid-row-gap: 18px;}
 /*
 'position: relative' in 'content .wrapper' create an issue for tabset in 'requirements' block
@@ -108,19 +108,12 @@ when after click on tab you are moved on top of page
 	.medium-score {color: #ffd000;}
 	.bad-score {color: #ff003c;}
 
-	.content-description {font-size: 14px; font-weight: 500;
+	.content-description {font-size: 14px; font-weight: 500; max-width: 770px;
 		grid-column-start: 1; grid-column-end: 2; grid-row-start: 2; grid-row-end: 3;}
 
-	.slideshow {width: 100%; height: 535px; padding-bottom: 67px;}
-		.shown-image {width: 100%; height: 435px; margin-bottom: 15px;
-			background: #444 url(../images/product/slide-1.jpg) no-repeat center center; background-size: cover;}
-		.slides {width: 100%; height: 85px; display: grid; grid-template-columns: repeat(5,auto); grid-column-gap: 5px;}
-			.slide {height: 100%; background: #444;}
-			.slide-1 {background: #444 url(../images/product/slide-1.jpg) no-repeat center center; background-size: cover;}
-			.slide-2 {background: #444 url(../images/product/slide-2.jpg) no-repeat center center; background-size: cover;}
-			.slide-3 {background: #444 url(../images/product/slide-2.jpg) no-repeat center center; background-size: cover;}
-			.slide-4 {background: #444 url(../images/product/slide-2.jpg) no-repeat center center; background-size: cover;}
-			.slide-5 {background: #444 url(../images/product/slide-2.jpg) no-repeat center center; background-size: cover;}
+/*SLIDESHOW START*/
+
+/*SLIDESHOW END*/
 
 	.main-description {width: 100%; border: 1px solid #4a4c51; border-radius: 4px; padding: 45px 0; box-sizing: border-box;}
 	.main-description .wrap {width: 100%; padding-right: 65px; padding-left: 65px; box-sizing: border-box;}
@@ -268,3 +261,40 @@ footer .wrapper {display: block; width: 1170px; margin: 0 auto;}
 	.copyright {width: 100%; height: 67px; background-color: #121418; line-height: 67px; color: #a4aab1;}
 
 /*FOOTER END*/
+
+/*
+
+
+	.slideshow {width: 100%; height: 535px; padding-bottom: 65px;}
+		.shown-image {width: 100%; height: 435px; margin-bottom: 15px;
+			background: #444 url(../images/product/slide-1.jpg) no-repeat center center; background-size: cover;}
+		.slides {width: 100%; height: 85px; display: grid; grid-template-columns: repeat(5,auto); grid-column-gap: 5px;}
+			.slide {height: 100%; background: #444;}
+			.slide-1 {background: #444 url(../images/product/slide-1.jpg) no-repeat center center; background-size: cover;}
+			.slide-2 {background: #444 url(../images/product/slide-2.jpg) no-repeat center center; background-size: cover;}
+			.slide-3 {background: #444 url(../images/product/slide-1.jpg) no-repeat center center; background-size: cover;}
+			.slide-4 {background: #444 url(../images/product/slide-2.jpg) no-repeat center center; background-size: cover;}
+			.slide-5 {background: #444 url(../images/product/slide-1.jpg) no-repeat center center; background-size: cover;}
+
+*/
+/*variant1*/
+
+/*.demo {
+    width: 770px;
+}
+ul {
+    list-style: none outside none;
+    padding-left: 0;
+    margin-bottom:0;
+}
+li {display: block; float: left; margin-right: 0; cursor:pointer;}
+.slideshow img {display: block; height: auto; width: 100%;}
+
+.lSAction>a {display: block; width: 50px; height: 100%; top: 0; background: rgba(255,255,255,.2); opacity: .5;
+	cursor: pointer; -webkit-transition: opacity .35s linear 0s; transition: opacity .35s linear 0s;
+    position: absolute; z-index: 99; margin-top: 0;}
+.lSAction>.lSNext {background-position: 0 0; right: 0;}
+.lSAction>.lSNext:before {content: ">";}
+.lSAction>.lSPrev {background-position: 0 0; left: 0;}
+.lSAction>.lSPrev:before {content: "<";}*/
+    /*...*/

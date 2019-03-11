@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" href="static/images/favicon96.png" sizes="96x96">  -->
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link href='static/css/index.css' rel="stylesheet">
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
@@ -20,6 +20,16 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="static/css/lightslider.min.css" media="screen">
+    <script src="static/js/lightslider.min.js"></script> -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" media="screen">
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+<!--     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" media="screen">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+
+    <link href='static/css/index.css' rel="stylesheet">
 </head>
 <body>
 	<header>
@@ -115,16 +125,166 @@
 				</div>
 			</div>
 			<div class="content-description">
-				<div class="slideshow">
-					<div class="shown-image"></div>
-					<div class="slides">
-						<div class="slide slide-1"></div>
-						<div class="slide slide-2"></div>
-						<div class="slide slide-3"></div>
-						<div class="slide slide-4"></div>
-						<div class="slide slide-5"></div>
-					</div>
+				<!-- <div class="slideshow demo">
+				    <ul id="lightSlider">
+				        <li data-thumb="static/images/product/slide-1.jpg">
+				            <img src="static/images/product/slide-1.jpg" />
+				        </li>
+				        <li data-thumb="static/images/product/slide-2.jpg">
+				            <img src="static/images/product/slide-2.jpg" />
+				        </li>
+				        <li data-thumb="static/images/product/slide-1.jpg">
+				            <img src="static/images/product/slide-1.jpg" />
+				        </li>
+				        <li data-thumb="static/images/product/slide-2.jpg">
+				            <img src="static/images/product/slide-2.jpg" />
+				        </li>
+				        <li data-thumb="static/images/product/slide-1.jpg">
+				            <img src="static/images/product/slide-1.jpg" />
+				        </li>
+				        <li data-thumb="static/images/product/slide-2.jpg">
+				            <img src="static/images/product/slide-2.jpg" />
+				        </li>
+				        <li data-thumb="static/images/product/slide-1.jpg">
+				            <img src="static/images/product/slide-1.jpg" />
+				        </li>
+				        <li data-thumb="static/images/product/slide-2.jpg">
+				            <img src="static/images/product/slide-2.jpg" />
+				        </li>
+				        <li data-thumb="static/images/product/slide-1.jpg">
+				            <img src="static/images/product/slide-1.jpg" />
+				        </li>
+				        <li data-thumb="static/images/product/slide-2.jpg">
+				            <img src="static/images/product/slide-2.jpg" />
+				        </li>
+				        <li data-thumb="static/images/product/slide-1.jpg">
+				            <img src="static/images/product/slide-1.jpg" />
+				        </li>
+				        <li data-thumb="static/images/product/slide-2.jpg">
+				            <img src="static/images/product/slide-2.jpg" />
+				        </li>
+				    </ul>
+				</div> -->
+				<!-- <div id="thumbnail-preview-indicators" class="carousel slide" data-ride="carousel">
+				  Indicators
+				  <ol class="carousel-indicators">
+				    <li data-target="#thumbnail-preview-indicators" data-slide-to="0" class="active">
+				      <div class="thumbnail thumb-1">
+				        <img class="img-responsive" src="https://s3.amazonaws.com/ooomf-com-files/wdXqHcTwSTmLuKOGz92L_Landscape.jpg">
+				      </div>
+				    </li>
+				    <li data-target="#thumbnail-preview-indicators" data-slide-to="1">
+				      <div class="thumbnail thumb-2">
+				        <img class="img-responsive" src="https://s3.amazonaws.com/ooomf-com-files/tU3ptNgGSP6U2fE67Gvy_SYDNEY-162.jpg">
+				      </div>
+				    </li>
+				    <li data-target="#thumbnail-preview-indicators" data-slide-to="2">
+				      <div class="thumbnail thumb-3">
+				        <img class="img-responsive" src="https://s3.amazonaws.com/ooomf-com-files/mtNrf7oxS4uSxTzMBWfQ_DSC_0043.jpg">
+				      </div>
+				    </li>
+				    <li data-target="#thumbnail-preview-indicators" data-slide-to="3">
+				      <div class="thumbnail thumb-4">
+				        <img class="img-responsive" src="https://s3.amazonaws.com/ooomf-com-files/mtNrf7oxS4uSxTzMBWfQ_DSC_0043.jpg">
+				      </div>
+				    </li>
+				    <li data-target="#thumbnail-preview-indicators" data-slide-to="4">
+				      <div class="thumbnail thumb-5">
+				        <img class="img-responsive" src="https://s3.amazonaws.com/ooomf-com-files/mtNrf7oxS4uSxTzMBWfQ_DSC_0043.jpg">
+				      </div>
+				    </li>
+				  </ol>
+				  <div class="carousel-inner">
+				    <div class="item slides active">
+				      <div class="slide-1"></div>
+				      <div class="container">
+				        <div class="carousel-caption">
+				          <h1>New carousel layout</h1>
+				          <p>Responsive thumbnail preview in carousel indicators.</p>
+				          <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+				        </div>
+				      </div>
+				    </div>
+				    <div class="item slides">
+				      <div class="slide-2"></div>
+				      <div class="container">
+				        <div class="carousel-caption">
+				          <h1>Another example headline.</h1>
+				          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+				          <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+				        </div>
+				      </div>
+				    </div>
+				    <div class="item slides">
+				      <div class="slide-3"></div>
+				      <div class="container">
+				        <div class="carousel-caption">
+				          <h1>One more for good measure.</h1>
+				          <p>Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+				          <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+				        </div>
+				      </div>
+				    </div>
+				    <div class="item slides">
+				      <div class="slide-4"></div>
+				      <div class="container">
+				        <div class="carousel-caption">
+				          <h1>One more for good measure.</h1>
+				          <p>Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+				          <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+				        </div>
+				      </div>
+				    </div>
+				    <div class="item slides">
+				      <div class="slide-5"></div>
+				      <div class="container">
+				        <div class="carousel-caption">
+				          <h1>One more for good measure.</h1>
+				          <p>Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+				          <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+				        </div>
+				      </div>
+				    </div>
+				  </div>
+				  <a class="left carousel-control" href="#thumbnail-preview-indicators" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+				  <a class="right carousel-control" href="#thumbnail-preview-indicators" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 				</div>
+ -->
+				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+				  <ol class="carousel-indicators">
+				    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+				    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+				    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+				    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+				    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+				  </ol>
+				  <div class="carousel-inner">
+				    <div class="carousel-item active">
+				      <img class="d-block w-100" src="static/images/product/slide-1.jpg" alt="First slide">
+				    </div>
+				    <div class="carousel-item">
+				      <img class="d-block w-100" src="static/images/product/slide-2.jpg" alt="Second slide">
+				    </div>
+				    <div class="carousel-item">
+				      <img class="d-block w-100" src="static/images/product/slide-1.jpg" alt="Third slide">
+				    </div>
+				    <div class="carousel-item">
+				      <img class="d-block w-100" src="static/images/product/slide-2.jpg" alt="Fourth slide">
+				    </div>
+				    <div class="carousel-item">
+				      <img class="d-block w-100" src="static/images/product/slide-1.jpg" alt="Fifth slide">
+				    </div>
+				  </div>
+				  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				    <span class="sr-only">Previous</span>
+				  </a>
+				  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				    <span class="sr-only">Next</span>
+				  </a>
+				</div>
+
 				<div class="main-description">
 					<div class="game-info wrap clearfix">
 						<div class="first-block">
@@ -297,6 +457,63 @@ function myFunction() {
   	}
   }
 }
+
+$(document).ready(function() {
+	$('.carousel').carousel()
+
+    $("#lightSlider").lightSlider({
+        item: 1,
+        autoWidth: false,
+        // slideMove: 1, // slidemove will be 1 if loop is true
+        slideMargin: 0,
+ 
+        // addClass: '',
+        // mode: "slide",
+        // useCSS: true,
+        // cssEasing: 'ease', //'cubic-bezier(0.25, 0, 0.25, 1)',//
+        // easing: 'linear', //'for jquery animation',////
+ 
+        // speed: 400, //ms'
+        // auto: false,
+        loop: true,
+        slideEndAnimation: true,
+        // pause: 2000,
+ 
+        // keyPress: false,
+        controls: true,
+        // prevHtml: '',
+        // nextHtml: '',
+ 
+        // rtl:false,
+        // adaptiveHeight:false,
+ 
+        vertical: false,
+        // verticalHeight:500,
+        // vThumbWidth:100,
+ 
+        thumbItem: 5,
+        // pager: true,
+        gallery: true,
+        galleryMargin: 15,
+        thumbMargin: 5,
+        // currentPagerPosition: 'middle',
+ 
+        enableTouch:true,
+        // enableDrag:true,
+        // freeMove:true,
+        // swipeThreshold: 40,
+ 
+        // responsive : [],
+ 
+        // onBeforeStart: function (el) {},
+        // onSliderLoad: function (el) {},
+        // onBeforeSlide: function (el) {},
+        // onAfterSlide: function (el) {},
+        // onBeforeNextSlide: function (el) {},
+        // onBeforePrevSlide: function (el) {}
+    });
+});
+
 </script>
 </body>
 </html>
