@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="73px" height="18px" viewBox="0 0 73 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>021-facebook</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-1009.000000, -843.000000)">
+            <g id="block3" transform="translate(135.000000, 226.000000)">
+                <g id="block3_4" transform="translate(800.000000, 89.000000)">
+                    <g id="Group-2" transform="translate(74.000000, 528.000000)">
+                        <g id="021-facebook">
+                            <rect id="Rectangle" fill="#4647B6" fill-rule="nonzero" x="0" y="0" width="73" height="18" rx="3"></rect>
+                            <path d="M15.3632812,0 L2.63671875,0 C1.1829529,0 0,1.1829529 0,2.63671875 L0,15.3632812 C0,16.8170471 1.1829529,18 2.63671875,18 L7.9453125,18 L7.9453125,11.6367188 L5.8359375,11.6367188 L5.8359375,8.47265625 L7.9453125,8.47265625 L7.9453125,6.328125 C7.9453125,4.58335877 9.36460877,3.1640625 11.109375,3.1640625 L14.3085938,3.1640625 L14.3085938,6.328125 L11.109375,6.328125 L11.109375,8.47265625 L14.3085938,8.47265625 L13.78125,11.6367188 L11.109375,11.6367188 L11.109375,18 L15.3632812,18 C16.8170471,18 18,16.8170471 18,15.3632812 L18,2.63671875 C18,1.1829529 16.8170471,0 15.3632812,0 Z" id="Path" fill="#FFFFFF"></path>
+                            <text id="Share" font-family="Montserrat-Medium, Montserrat" font-size="12" font-weight="400" fill="#FFFFFF">
+                                <tspan x="26.468" y="14">Share</tspan>
+                            </text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
