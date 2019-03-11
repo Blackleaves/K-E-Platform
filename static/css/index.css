@@ -279,8 +279,9 @@ footer .wrapper {display: block; width: 1170px; margin: 0 auto;}
 */
 /*variant1*/
 
-/*.demo {
+.slideshow {
     width: 770px;
+    margin-bottom: 65px;
 }
 ul {
     list-style: none outside none;
@@ -296,5 +297,5 @@ li {display: block; float: left; margin-right: 0; cursor:pointer;}
 .lSAction>.lSNext {background-position: 0 0; right: 0;}
 .lSAction>.lSNext:before {content: ">";}
 .lSAction>.lSPrev {background-position: 0 0; left: 0;}
-.lSAction>.lSPrev:before {content: "<";}*/
+.lSAction>.lSPrev:before {content: "<";}
     /*...*/
