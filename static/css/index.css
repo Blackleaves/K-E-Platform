@@ -152,9 +152,11 @@ when after click on tab you are moved on top of page
 		cursor: pointer; -webkit-transition: opacity .35s linear 0s; transition: opacity .35s linear 0s;
 	    position: absolute; z-index: 99; margin-top: 0;}
 	.lSAction>.lSNext {background-position: 0 0; right: 0;}
-	.lSAction>.lSNext:before {content: ">";}
+	.lSAction>.lSNext:before {content: "\f054";}
 	.lSAction>.lSPrev {background-position: 0 0; left: 0;}
-	.lSAction>.lSPrev:before {content: "<";}
+	.lSAction>.lSPrev:before {content: "\f053";}
+	.lSAction>.lSNext:before, .lSAction>.lSPrev:before {display: inherit; font-size: 24px;
+		text-align: center; font-weight: 900; line-height: 440px; font-family: 'Font Awesome 5 Free', sans-serif;}
     
 /*SLIDESHOW END*/
 
