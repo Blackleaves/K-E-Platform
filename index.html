@@ -11,18 +11,18 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
-<!--     <script src='static/js/generate-slider.js' type="text/javascript"></script>
-    <script src='static/js/image-rotator.js' type="text/javascript"></script> -->
-
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
     <link rel="stylesheet" href="static/css/lightslider.min.css" media="screen">
     <script src="static/js/lightslider.min.js"></script>
+
+    <!--     <script src='static/js/generate-slider.js' type="text/javascript"></script>
+    <script src='static/js/image-rotator.js' type="text/javascript"></script> -->
+
     <!-- <link rel="stylesheet" href="static/css/bootstrap.min.css" media="screen"> -->
     <!-- <script src="static/js/bootstrap.bundle.min.js"></script> -->
 <!--     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" media="screen">
@@ -31,13 +31,13 @@
 
     <link href='static/css/index.css' rel="stylesheet">
 </head>
-<body>
+<body class="clearfix">
 	<header>
 		<div class="first-header">
 			<div class="wrapper">
 				<div class="brand">
 					<img src class="logo" />
-					<span class="title">Platform</span>
+					<span class="brand-name">Platform</span>
 				</div>
 				<input type="search" class="header-search" placeholder="Search" />
 				<div class="login desktop"><a href="">Log In</a></div>
@@ -50,7 +50,7 @@
 			<div class="wrapper">
 				<div class="developer">
 					<img src="static/images/product/studio-logo.png" class="dev-logo">
-					<span class="dev-title">KONSTRUCTORS</span>
+					<span class="dev-name">KONSTRUCTORS</span>
 				</div>
 				<nav>
 					<div class="nav-point"><a href="">Home</a></div>
@@ -110,12 +110,14 @@
 							</div>
 						</div>
 						<div class="price clearfix">
-							<div class="discount">-20%</div>
-							<div class="current-price">$15.99</div>
-							<div class="start-price">$19.99 USD</div>
+							<div id="discount" class="discount">
+								
+							</div>
+							<div id="current-price" class="current-price"><span class="currency">$</span><span class="price-tag">15.99</span></div>
+							<div id="start-price" class="start-price"><span class="currency">$</span><span class="price-tag">19.99</span> <span class="sub-currency">USD</span></div>
 							<div class="countdown">This deal ends in <span class="time">20:50:57</span></div>
 						</div>
-						<button class="add-to-cart">Add to cart</button>
+						<button class="green-button add-to-cart">Add to cart</button>
 						<div class="share">
 							Share 
 							<a class="facebook">Share</a> 
@@ -222,9 +224,9 @@
 							<div class="platforms clearfix">
 								<div class="title">PLATFORM</div>
 								<div class="platform-tags">
-									<div class="tag"><i class="fab fa-windows"></i> Windows</div>
-									<div class="tag"><i class="fab fa-apple"></i> Mac</div>
-									<div class="tag"><i class="fab fa-steam-symbol"></i> Steam</div>
+									<div class="tag"><img src="static/images/icons/windows-logo.svg" /> Windows</div>
+									<div class="tag"><img src="static/images/icons/mac-os-logo.svg" /> Mac</div>
+									<div class="tag"><img src="static/images/icons/steam-logo.svg" /> Steam</div>
 								</div>
 							</div>
 							<div class="genres clearfix">
@@ -321,9 +323,9 @@
 	<footer>
 		<div class="first-footer">
 			<div class="wrapper">
-				<div class="subscribe-text">Subscribe to receive exclusive news and offers</div>
+				<div class="subscribe-text title">Subscribe to receive exclusive news and offers</div>
 				<input type="email" class="subscribe-email" name="subscribe-email" placeholder="Type your email here" />
-				<button class="subscribe-button">Subscribe</button>
+				<button class="green-button subscribe-button">Subscribe</button>
 			</div>
 		</div>
 		<div class="separator"></div>
@@ -360,77 +362,146 @@
 	</footer>
 
 <script>
-window.ready = function() {myFunction()};
-window.onscroll = function() {myFunction()};
+	var flowState = 0; // 0 - top, 1 - flow, 2 - bottom
+	var topSpace = 0; // Height of everything above buy-it-block
+	var bottomSpace = 0; // Maximum space on the screen under buy-it-block
+	var rightPadding = 0;
 
-function myFunction() {
-  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  if (winScroll < 295) {
-  	$('#buy-it-block').addClass('on-top').removeClass('on-flow').removeClass('on-bottom');
-  } else {
-  	$('#buy-it-block').addClass('on-flow').removeClass('on-top').removeClass('on-bottom');
-  	if (winScroll > 2465) {
-  		$('#buy-it-block').addClass('on-bottom').removeClass('on-top').removeClass('on-flow');
-  	}
-  }
-}
+	function blockFlow() {
+	  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+	  if (winScroll < topSpace) {
+	  	if (flowState != 0) {
+		  	$('#buy-it-block').addClass('on-top').removeClass('on-flow').removeClass('on-bottom');
+		  	flowState = 0;
+		  	$('#buy-it-block').css("right",0);
+		}
+	  } else {
+		// visible part of footer should be less than bottomSpace
+		if ( getVisibleHeight($('footer')) < bottomSpace ) {
+			// than buy-it-block flow
+			if (flowState != 1) {
+			  	$('#buy-it-block').addClass('on-flow').removeClass('on-top').removeClass('on-bottom');
+			  	flowState = 1;
+			  	$('#buy-it-block').css("right",rightPadding);
+			}
+		} else {
+			// otherwise buy-it-block should be blocked
+		 	if (flowState != 2) {
+		  		$('#buy-it-block').addClass('on-bottom').removeClass('on-top').removeClass('on-flow');
+		  		flowState = 2;
+		  		$('#buy-it-block').css("right",0);
+		  	}
+	  	}
+	  }
+	}
 
-$(document).ready(function() {
-	// $('.carousel').carousel()
+	function getVisibleHeight(visibleObject) {    
+	    var $el = $('footer'),
+	        scrollTop = $(this).scrollTop(),
+	        scrollBot = scrollTop + $(this).height(),
+	        elTop = $el.offset().top,
+	        elBottom = elTop + $el.outerHeight(),
+	        visibleTop = elTop < scrollTop ? scrollTop : elTop,
+	        visibleBottom = elBottom > scrollBot ? scrollBot : elBottom;
+	    var result = visibleBottom - visibleTop;
+	    return result;
+	}
+	function getVisibleWidth(visibleObject) {    
+	    var $el = visibleObject,
+	        scrollLeft = $(this).scrollLeft(),
+	        scrollRight = scrollLeft + $(this).width(),
+	        elLeft = $el.offset().left,
+	        elRight = elLeft + $el.outerWidth(),
+	        visibleLeft = elLeft < scrollLeft ? scrollLeft : elLeft,
+	        visibleRight = elRight > scrollRight ? scrollRight : elRight;
+	    var result = visibleRight - visibleLeft;
+	    return result;
+	}
 
-    $("#lightSlider").lightSlider({
-        item: 1,
-        autoWidth: false,
-        // slideMove: 1, // slidemove will be 1 if loop is true
-        slideMargin: 0,
- 
-        // addClass: '',
-        // mode: "slide",
-        // useCSS: true,
-        // cssEasing: 'ease', //'cubic-bezier(0.25, 0, 0.25, 1)',//
-        // easing: 'linear', //'for jquery animation',////
- 
-        // speed: 400, //ms'
-        // auto: false,
-        loop: true,
-        slideEndAnimation: true,
-        // pause: 2000,
- 
-        // keyPress: false,
-        controls: true,
-        // prevHtml: '',
-        // nextHtml: '',
- 
-        // rtl:false,
-        // adaptiveHeight:false,
- 
-        vertical: false,
-        // verticalHeight:500,
-        // vThumbWidth:100,
- 
-        thumbItem: 5,
-        // pager: true,
-        gallery: true,
-        galleryMargin: 15,
-        thumbMargin: 5,
-        // currentPagerPosition: 'middle',
- 
-        enableTouch:true,
-        // enableDrag:true,
-        // freeMove:true,
-        // swipeThreshold: 40,
- 
-        // responsive : [],
- 
-        // onBeforeStart: function (el) {},
-        // onSliderLoad: function (el) {},
-        // onBeforeSlide: function (el) {},
-        // onAfterSlide: function (el) {},
-        // onBeforeNextSlide: function (el) {},
-        // onBeforePrevSlide: function (el) {}
-    });
-});
+	$(document).ready(function() {
+		// $('.carousel').carousel()
 
+	    $("#lightSlider").lightSlider({
+	        item: 1,
+	        autoWidth: false,
+	        // slideMove: 1, // slidemove will be 1 if loop is true
+	        slideMargin: 0,
+	 
+	        // addClass: '',
+	        // mode: "slide",
+	        // useCSS: true,
+	        // cssEasing: 'ease', //'cubic-bezier(0.25, 0, 0.25, 1)',//
+	        // easing: 'linear', //'for jquery animation',////
+	 
+	        // speed: 400, //ms'
+	        // auto: false,
+	        loop: true,
+	        slideEndAnimation: true,
+	        // pause: 2000,
+	 
+	        // keyPress: false,
+	        controls: true,
+	        // prevHtml: '',
+	        // nextHtml: '',
+	 
+	        // rtl:false,
+	        // adaptiveHeight:false,
+	 
+	        vertical: false,
+	        // verticalHeight:500,
+	        // vThumbWidth:100,
+	 
+	        thumbItem: 5,
+	        // pager: true,
+	        gallery: true,
+	        galleryMargin: 15,
+	        thumbMargin: 5,
+	        // currentPagerPosition: 'middle',
+	 
+	        enableTouch:true,
+	        // enableDrag:true,
+	        // freeMove:true,
+	        // swipeThreshold: 40,
+	 
+	        // responsive : [],
+	 
+	        // onBeforeStart: function (el) {},
+	        // onSliderLoad: function (el) {},
+	        // onBeforeSlide: function (el) {},
+	        // onAfterSlide: function (el) {},
+	        // onBeforeNextSlide: function (el) {},
+	        // onBeforePrevSlide: function (el) {}
+	    });
+
+		// Buy it block flow
+	    // Height of everything above buy-it-block
+	    topSpace = parseInt($("header")[0].scrollHeight) + parseInt($("content .wrapper").css("padding-top")) + parseInt($("content .wrapper .rating")[0].scrollHeight);
+		// Maximum space on the screen under buy-it-block
+	    bottomSpace = parseInt($(window).height()) - parseInt($("content .buy-it-block")[0].scrollHeight) - parseInt($("content .wrapper").css("padding-bottom")) - 20;
+		
+		if ( $("content .wrapper")[0].scrollWidth > $(window).width() ) {
+			rightPadding = getVisibleWidth($("content .buy-it-wrapper")) - $("content .buy-it-wrapper")[0].scrollWidth;
+		} else {
+			rightPadding = ( $(window).width() - $("content .wrapper")[0].scrollWidth ) / 2;
+		}
+
+		blockFlow();
+		
+
+
+		// Price discount
+		$('#discount').append(Math.round( parseFloat($('#current-price .price-tag')[0].innerText) / parseFloat($('#start-price .price-tag')[0].innerText) * 100 ) - 100 + '%');
+
+	});
+	window.onscroll = function() {blockFlow()};
+	window.onresize = function() {
+		if ( $("content .wrapper")[0].scrollWidth > $(window).width() ) {
+			rightPadding = getVisibleWidth($("content .buy-it-wrapper")) - $("content .buy-it-wrapper")[0].scrollWidth;
+		} else {
+			rightPadding = ( $(window).width() - $("content .wrapper")[0].scrollWidth ) / 2;
+		}
+		if (flowState == 1) {$('#buy-it-block').css("right",rightPadding);}
+	};
 </script>
 </body>
 </html>
