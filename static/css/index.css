@@ -41,8 +41,7 @@ form {padding: 0; margin: 0;}
 /*GLOBAL STYLES START*/
 .separator {width: 100%; height: 1px; background-color: #4a4c51;}
 
-.mobile {display: none;}
-.fab, .fas {padding-right: 6px;}
+.fab {padding-right: 6px;}
 
 .title {font-size: 13px; font-weight: 700; line-height: 1.38; letter-spacing: 6.5px; text-transform: uppercase;}
 
@@ -56,6 +55,8 @@ form {padding: 0; margin: 0;}
 .platform-tags .tag img {float: left; padding: 3px 5px 0 0;}
 .genre-tags .tag {height: 20px; line-height: 20px; margin: 0 13px 13px 0;}
 
+.mobile-navigation,
+.mobile-navigation-popup {display: none;}
 /*GLOBAL STYLES END*/
 
 /*HEADER START*/

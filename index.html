@@ -30,6 +30,7 @@
 
 
     <link href='static/css/index.css' rel="stylesheet">
+    <link href='static/css/mobile.css' rel="stylesheet">
 </head>
 <body class="clearfix">
 	<header>
@@ -37,7 +38,7 @@
 			<div class="wrapper">
 				<div class="brand">
 					<img src class="logo" />
-					<span class="brand-name">Platform</span>
+					<span class="brand-name desktop">Platform</span>
 				</div>
 				<input type="search" class="header-search" placeholder="Search" />
 				<div class="login desktop"><a href="">Log In</a></div>
@@ -50,21 +51,39 @@
 			<div class="wrapper">
 				<div class="developer">
 					<img src="static/images/product/studio-logo.png" class="dev-logo">
-					<span class="dev-name">KONSTRUCTORS</span>
+					<span class="dev-name">Konstructors</span>
 				</div>
-				<nav>
+				<nav class="desktop">
 					<div class="nav-point"><a href="">Home</a></div>
 					<div class="nav-point"><a href="">Hot Deals</a></div>
 					<div class="nav-point"><a href="">Top Sellers</a></div>
-					<div class="nav-point login mobile"><a href="">Log In</a></div>
-					<div class="nav-point register mobile"><a href="">Register</a></div>
-					<div class="nav-point language mobile">EN</div>
 				</nav>
-				<div class="social">
+				<div class="social desktop">
 					<div class="facebook"><a href="" target="_blank"><img src="static/images/icons/facebook.svg" /> <span class="social-numbers">17,431</span></a></div>
 					<div class="twitter"><a href="" target="_blank"><img src="static/images/icons/twitter.svg" /> <span class="social-numbers">5,819</span></a></div>
 					<div class="youtube"><a href="" target="_blank"><img src="static/images/icons/youtube.svg" /> <span class="social-numbers">246</span></a></div>
 					<div class="website"><a href="" target="_blank"><img src="static/images/icons/link.svg" /> Website</a></div>
+				</div>
+				<div id="mobile-navigation" class="mobile-navigation">
+					<i class="fas fa-bars"></i>
+					<div class="mobile-navigation-popup">
+						<div class="mobile-navigation-nav">
+							<div class="nav-point"><a href="">Home</a></div>
+							<div class="nav-point"><a href="">Hot Deals</a></div>
+							<div class="nav-point"><a href="">Top Sellers</a></div>
+						</div>
+						<div class="mobile-navigation-log-in">
+							<div class="nav-point login"><a href="">Log In</a></div>
+							<div class="nav-point register"><a href="">Register</a></div>
+						</div>
+						<div class="mobile-navigation-language">EN</div>
+						<!-- <div class="mobile-navigation-social">
+							<div class="facebook"><a href="" target="_blank"><img src="static/images/icons/facebook.svg" /> <span class="social-numbers">17,431</span></a></div>
+							<div class="twitter"><a href="" target="_blank"><img src="static/images/icons/twitter.svg" /> <span class="social-numbers">5,819</span></a></div>
+							<div class="youtube"><a href="" target="_blank"><img src="static/images/icons/youtube.svg" /> <span class="social-numbers">246</span></a></div>
+							<div class="website"><a href="" target="_blank"><img src="static/images/icons/link.svg" /> Website</a></div>
+						</div> -->
+					</div>
 				</div>
 			</div>
 		</div>
@@ -368,31 +387,32 @@
 	var rightPadding = 0;
 
 	function blockFlow() {
-	  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-	  if (winScroll < topSpace) {
-	  	if (flowState != 0) {
-		  	$('#buy-it-block').addClass('on-top').removeClass('on-flow').removeClass('on-bottom');
-		  	flowState = 0;
-		  	$('#buy-it-block').css("right",0);
-		}
-	  } else {
-		// visible part of footer should be less than bottomSpace
-		if ( getVisibleHeight($('footer')) < bottomSpace ) {
-			// than buy-it-block flow
-			if (flowState != 1) {
-			  	$('#buy-it-block').addClass('on-flow').removeClass('on-top').removeClass('on-bottom');
-			  	flowState = 1;
-			  	$('#buy-it-block').css("right",rightPadding);
-			}
-		} else {
-			// otherwise buy-it-block should be blocked
-		 	if (flowState != 2) {
-		  		$('#buy-it-block').addClass('on-bottom').removeClass('on-top').removeClass('on-flow');
-		  		flowState = 2;
-		  		$('#buy-it-block').css("right",0);
-		  	}
-	  	}
-	  }
+
+	var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+	if (winScroll < topSpace) {
+	if (flowState != 0) {
+	$('#buy-it-block').addClass('on-top').removeClass('on-flow').removeClass('on-bottom');
+	flowState = 0;
+	$('#buy-it-block').css("right",0);
+	}
+	} else {
+	// visible part of footer should be less than bottomSpace
+	if ( getVisibleHeight($('footer')) < bottomSpace ) {
+	// than buy-it-block flow
+	if (flowState != 1) {
+	$('#buy-it-block').addClass('on-flow').removeClass('on-top').removeClass('on-bottom');
+	flowState = 1;
+	$('#buy-it-block').css("right",rightPadding);
+	}
+	} else {
+	// otherwise buy-it-block should be blocked
+	if (flowState != 2) {
+	$('#buy-it-block').addClass('on-bottom').removeClass('on-top').removeClass('on-flow');
+	flowState = 2;
+	$('#buy-it-block').css("right",0);
+	}
+	}
+	}
 	}
 
 	function getVisibleHeight(visibleObject) {    
@@ -502,6 +522,17 @@
 		}
 		if (flowState == 1) {$('#buy-it-block').css("right",rightPadding);}
 	};
+
+// mobile navigations
+	$('#mobile-navigation .fa-bars').click(function() {
+		if ($('#mobile-navigation').hasClass('mobile-navigation-click')) { 
+			$('#mobile-navigation').removeClass("mobile-navigation-click");
+			$('body').css('width', '100%').css('height', '100%').removeClass('navigation-click');
+		} else {
+			$('#mobile-navigation').addClass('mobile-navigation-click');
+			$('body').addClass('navigation-click');
+		}
+	});
 </script>
 </body>
 </html>
