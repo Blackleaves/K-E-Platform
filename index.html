@@ -391,7 +391,7 @@
     var rightPadding = 0;
 
     function blockFlow() {
-        if (window.innerWidth > 480) {
+        if (window.innerWidth < 1200) {
             console.log(window.innerWidth);
             var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             if (winScroll < topSpace) {

@@ -1,5 +1,5 @@
-@media only screen and (max-width: 480px) {
-    :root {
+@media only screen and (max-width: 700px) {
+        :root {
         --font-size-base: 14px;
     }
 
@@ -130,7 +130,7 @@
 
         .tabset > label:first-of-type {margin-left: 5px;}
 
-        .tab-panels {padding: 0 16px 50px 16px; margin: 0 -16px 0 -16px;}
+        .tab-panels {padding: 0 16px 50px 16px; margin: 0 -15px 0 -15px;}
         .tab-panel .subtitle {color: var(--text-second-color); padding: 10px 0;}
     /*REQUIREMENTS END*/
     
@@ -141,9 +141,9 @@
     footer .wrapper {width: 100%;}
 
         .first-footer {height: auto;}
-        .first-footer .wrapper {padding: 50px 16px 50px 16px; box-sizing: border-box;}
-        .first-footer .subscribe-text {width: 100%; padding: 0; margin: 0 30px 25px 0;}
-        .first-footer .subscribe-email {width: 100%; max-width: 470px; margin: 0 30px 15px 0;}
+        .first-footer .wrapper {max-width: 430px; padding: 50px 15px 50px 15px; margin: 0 auto; box-sizing: border-box;}
+        .first-footer .subscribe-text {width: 100%; max-width: 300px; padding: 0; margin: 0 30px 25px 0;}
+        .first-footer .subscribe-email {width: 100%; max-width: 400px; margin: 0 30px 15px 0;}
 
         .second-footer {height: auto;}
         .second-footer .wrapper {display: block; padding: 35px 16px 50px; box-sizing: border-box;}
@@ -153,6 +153,42 @@
 
         .copyright {text-align: center;}
 
+    /*FOOTER END*/
+
+} 
+@media only screen and (max-width: 480px) {
+    /*GLOBAL STYLES START*/
+    /*GLOBAL STYLES END*/
+
+    /*HEADER START*/
+
+    /*FIRST HEADER START*/
+    /*FIRST HEADER END*/
+
+    /*SECOND HEADER START*/
+    /*SECOND HEADER END*/
+
+    /*HEADER END*/
+
+    /*CONTENT START*/
+
+    /*BUY IT START*/
+    /*BUY IT END*/
+
+    /*SLIDESHOW START*/
+    /*SLIDESHOW END*/
+
+    /*DESCRIPTION START*/
+    /*DESCRIPTION END*/
+
+    /*REQUIREMENTS START*/
+
+    /*REQUIREMENTS END*/
+    
+    /*CONTENT END*/
+
+    /*FOOTER START*/
+        .first-footer .wrapper {max-width: none; padding: 50px 16px 50px 16px; box-sizing: border-box;}
     /*FOOTER END*/
 
 }
