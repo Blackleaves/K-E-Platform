@@ -91,9 +91,9 @@
 
     <content class="clearfix">
         <div class="wrapper">
-            <div class="content-header">
+            <div class="content-header clearfix">
                 <div class="content-title">
-                    Cuphead
+                    <span class="game">Cuphead</span>
                     <span class="studio">by Studio MDHR Entertainment Inc.</span>
                 </div>
                 <div class="user-rating">
@@ -107,7 +107,11 @@
             </div>
             <div class="rating">
                 <div class="score">8.7 <span class="score-text">GREAT!</span></div>
-                <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                <div class="text">
+                    <div class="text-wrap">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                </div>
             </div>
             <div class="buy-it-wrapper">
                 <div id="buy-it-block" class="buy-it-block">
@@ -387,32 +391,34 @@
     var rightPadding = 0;
 
     function blockFlow() {
-
-    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    if (winScroll < topSpace) {
-    if (flowState != 0) {
-    $('#buy-it-block').addClass('on-top').removeClass('on-flow').removeClass('on-bottom');
-    flowState = 0;
-    $('#buy-it-block').css("right",0);
-    }
-    } else {
-    // visible part of footer should be less than bottomSpace
-    if ( getVisibleHeight($('footer')) < bottomSpace ) {
-    // than buy-it-block flow
-    if (flowState != 1) {
-    $('#buy-it-block').addClass('on-flow').removeClass('on-top').removeClass('on-bottom');
-    flowState = 1;
-    $('#buy-it-block').css("right",rightPadding);
-    }
-    } else {
-    // otherwise buy-it-block should be blocked
-    if (flowState != 2) {
-    $('#buy-it-block').addClass('on-bottom').removeClass('on-top').removeClass('on-flow');
-    flowState = 2;
-    $('#buy-it-block').css("right",0);
-    }
-    }
-    }
+        if (window.innerWidth > 480) {
+            console.log(window.innerWidth);
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            if (winScroll < topSpace) {
+                if (flowState != 0) {
+                    $('#buy-it-block').addClass('on-top').removeClass('on-flow').removeClass('on-bottom');
+                    flowState = 0;
+                    $('#buy-it-block').css("right",0);
+                }
+            } else {
+                // visible part of footer should be less than bottomSpace
+                if ( getVisibleHeight($('footer')) < bottomSpace ) {
+                    // than buy-it-block flow
+                    if (flowState != 1) {
+                        $('#buy-it-block').addClass('on-flow').removeClass('on-top').removeClass('on-bottom');
+                        flowState = 1;
+                        $('#buy-it-block').css("right",rightPadding);
+                    }
+                } else {
+                    // otherwise buy-it-block should be blocked
+                    if (flowState != 2) {
+                    $('#buy-it-block').addClass('on-bottom').removeClass('on-top').removeClass('on-flow');
+                    flowState = 2;
+                    $('#buy-it-block').css("right",0);
+                    }
+                }
+            }
+        }
     }
 
     function getVisibleHeight(visibleObject) {    
@@ -441,6 +447,7 @@
     $(document).ready(function() {
         // $('.carousel').carousel()
 
+        var thumbNumber = window.innerWidth > 480 ? 5 : 3;
         $("#lightSlider").lightSlider({
             item: 1,
             autoWidth: false,
@@ -471,7 +478,7 @@
             // verticalHeight:500,
             // vThumbWidth:100,
      
-            thumbItem: 5,
+            thumbItem: thumbNumber,
             // pager: true,
             gallery: true,
             galleryMargin: 15,

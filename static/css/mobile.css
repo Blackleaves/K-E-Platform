@@ -70,50 +70,48 @@
 
     /*CONTENT START*/
     content {display: block; width: 100%; color: var(--text-main-color);}
-    content .wrapper {display: block; max-width: 1170px; margin: 0 auto; padding: 35px 0 50px; box-sizing: border-box;
-        display: block;}
+    content .wrapper {display: block; width: 100%; margin: 0 auto; padding: 20px 15px 10px; box-sizing: border-box;}
+
+        .main-description,
+        .game-description
+        .game-requirements,
+        .how-to-activate {display: none!important;}
+
     /*
     'position: relative' in 'content .wrapper' create an issue for tabset in 'requirements' block
     when after click on tab you are moved on top of page
     */
-        .content-header {height: 70px;}
-        .rating {height: 70px; background: #2b2b31; font-size: var(--font-size-base);}
-            .rating .score {float: left; width: 70px; height: 70px; padding: 15px 0 0; box-sizing: border-box;
-                background: #36353a; text-align: center; font-size: 18px; font-weight: 700;}
-            .rating .score-text {font-size: var(--font-size-base);}
-            .rating .text {float: right; width: 300px; height: 70px; padding: 11px 18px 5px 20px;
-                overflow: hidden; box-sizing: border-box;}
-        .content-title {width: 100%; height: 34px; padding-bottom: 12px; font-size: 28px;}
-            .studio {font-size: var(--font-size-base); opacity: 0.5;}
-        .user-rating {width: 100%; height: 25px; font-size: var(--font-size-base);}
-            .user-score {float: left; height: 100%; padding: 0 6px; margin-right: 16px; line-height: 23px;
-                border-radius: 2px; border: 1.5px solid #4a4c51; box-sizing: border-box;}
-            .user-score img {float: left; padding: 4px 4px 0 0;}
-            .user-rating-count {line-height: 25px;}
+        .content-header {padding-bottom: 20px;}
+
+        .content-title {height: auto; padding-bottom: 5px;}
+            /*.content-title .game {}*/
+            .content-title .studio {display: block;}
+        /*.user-rating {}*/
+            /*.user-score {}*/
+            /*.user-score img {}*/
+            /*.user-rating-count {}*/
 
         .good-score {color: #16c172;}
         .medium-score {color: #ffd000;}
         .bad-score {color: #ff003c;}
 
-        .content-description {font-size: var(--font-size-base); max-width: 770px;
-            grid-column-start: 1; grid-column-end: 2; grid-row-start: 2; grid-row-end: 3;}
+        .rating {margin-bottom: 15px;}
+            .rating .text {font-size: 12px; padding: 5px 20px 5px 20px; box-sizing: border-box;}
+
+
+    /*BUY IT START*/
+    .buy-it-wrapper {position: relative; display: block; width: 100%; height: 100%;}
+
+        /*STYLING*/
+        .buy-it-block {display: table; width: 100%; margin-bottom: 20px;}
+        .buy-it-block .padding {max-width: 370px; margin: 0 auto;}
+    /*BUY IT END*/
+
+    .content-description {width: 100%;}
 
     /*SLIDESHOW START*/
-        /*This is bad*/
-        .slideshow {width: 770px; margin-bottom: 65px;}
-        .slideshow ul {list-style: none outside none; padding-left: 0; margin-bottom:0;}
-        .slideshow li {display: block; float: left; margin-right: 0; cursor:pointer;}
-        .slideshow img {display: block; height: auto; width: 100%;}
-        /*...*/
-        .lSAction>a {display: block; width: 50px; height: 100%; top: 0; background: var(--light-background); opacity: .5;
-            cursor: pointer; -webkit-transition: opacity .35s linear 0s; transition: opacity .35s linear 0s;
-            position: absolute; z-index: 99; margin-top: 0;}
-        .lSAction>.lSNext {background-position: 0 0; right: 0;}
-        .lSAction>.lSNext:before {content: "\f054";}
-        .lSAction>.lSPrev {background-position: 0 0; left: 0;}
-        .lSAction>.lSPrev:before {content: "\f053";}
-        .lSAction>.lSNext:before, .lSAction>.lSPrev:before {display: inherit; font-size: 24px;
-            text-align: center; font-weight: 900; line-height: 440px; font-family: 'Font Awesome 5 Free', sans-serif;}
+        .slideshow {}
+        .lSAction>.lSNext:before, .lSAction>.lSPrev:before {line-height: 250px;}
         
     /*SLIDESHOW END*/
 
@@ -181,38 +179,7 @@
         .how-to-activate li {padding-bottom: 25px; line-height: 1.57;}
     /*REQUIREMENTS END*/
 
-    /*BUY IT START*/
-    .buy-it-wrapper {position: relative; display: block; width: 100%; height: 100%;}
-        /*FLOW*/
-        .on-top {position: static;}
-        .on-flow {position: fixed; top: 20px; /*right: calc(50% - 585px); Managed by javascript*/}
-        .on-bottom {position: absolute; bottom: 0;}
-        /*STYLING*/
-        .buy-it-block {display: table; width: 370px; grid-column-start: 2; grid-column-end: 3;
-            font-size: var(--font-size-base); background: #2b2b31;}
-
-        .buy-it-block .banner {display: block; width: 100%; padding: 0; margin: 0;}
-        .buy-it-block .padding {padding: 15px 15px 20px;}
-        .buy-it-block .tag {}
-        .buy-it-block .description {padding: 0 5px 15px;}
-        .buy-it-block .price {padding: 7px 0 20px;}
-        .buy-it-block .price .discount {float: left; width: 84px; height: 35px; margin-right: 13px; padding: 7px 0;
-            background-color: #ff003c; font-size: 20px; line-height: 21px; font-weight: 700; text-align: center; box-sizing: border-box;}
-        .buy-it-block .price .current-price {float: left; font-size: 30px; line-height: 35px; font-weight: 700;}
-        .buy-it-block .price .start-price {float: left; margin-left: 13px; font-size: 18px; line-height: 35px; font-weight: 700;
-            text-decoration: line-through; opacity: 0.3;}
-        .buy-it-block .price .countdown {float: left; clear: left; padding-top: 10px; font-size: var(--font-size-base);}
-        .buy-it-block .price .countdown .time {text-decoration: underline; color: #ff003c;}
-
-        .buy-it-block .add-to-cart {width: 100%; height: 60px; padding: 20px 0; text-transform: uppercase;}
-        .buy-it-block .share {width: 100%; height: 18px; padding-top: 18px; color: rgba(255,255,255,.4); line-height: 18px;}
-        .buy-it-block .share a {display: inline-block; width: 73px; height: 18px; padding-left: 20px; margin: 0 5px 0 15px;
-            border-radius: 3px; font-size: 12px; line-height: 18px; text-align: center; box-sizing: border-box; cursor: pointer;}
-        .buy-it-block .share a:hover {text-decoration: none;}
-        .buy-it-block .share .facebook {background: #4647b6 url('../images/icons/facebook.svg') no-repeat left center;}
-        .buy-it-block .share .twitter {background: #249fbc url('../images/icons/twitter.svg') no-repeat 3px center; background-size: 16px auto;}
-    /*BUY IT END*/
-
+    
     /*CONTENT END*/
 
     /*FOOTER START*/
@@ -247,8 +214,6 @@
 
     /*FOOTER END*/
 
-
-    content {display: none;}
     footer {display: none;}
 
 }

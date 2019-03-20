@@ -120,31 +120,35 @@ content .wrapper {display: block; max-width: 1170px; margin: 0 auto; padding: 35
 'position: relative' in 'content .wrapper' create an issue for tabset in 'requirements' block
 when after click on tab you are moved on top of page
 */
-    .content-header {height: 70px;}
-    .rating {height: 70px; background: #2b2b31; font-size: var(--font-size-base);}
-        .rating .score {float: left; width: 70px; height: 70px; padding: 15px 0 0; box-sizing: border-box;
-            background: #36353a; text-align: center; font-size: 18px; font-weight: 700;}
-        .rating .score-text {font-size: var(--font-size-base);}
-        .rating .text {float: right; width: 300px; height: 70px; padding: 11px 18px 5px 20px;
-            overflow: hidden; box-sizing: border-box;}
+    .content-header {min-height: 70px; height: auto;}
+    
     .content-title {width: 100%; height: 34px; padding-bottom: 12px; font-size: 28px;}
-        .studio {font-size: var(--font-size-base); opacity: 0.5;}
+        /*.content-title .game {}*/
+        .content-title .studio {font-size: var(--font-size-base); opacity: 0.5;}
     .user-rating {width: 100%; height: 25px; font-size: var(--font-size-base);}
         .user-score {float: left; height: 100%; padding: 0 6px; margin-right: 16px; line-height: 23px;
             border-radius: 2px; border: 1.5px solid #4a4c51; box-sizing: border-box;}
         .user-score img {float: left; padding: 4px 4px 0 0;}
-        .user-rating-count {line-height: 25px;}
+        .user-rating-count {float: left; line-height: 25px;}
 
     .good-score {color: #16c172;}
     .medium-score {color: #ffd000;}
     .bad-score {color: #ff003c;}
 
-    .content-description {font-size: var(--font-size-base); max-width: 770px;
+    .rating {width: 100%; height: 70px; background: #2b2b31; font-size: var(--font-size-base);
+        display: grid; grid-template-columns: 70px auto;}
+        .rating .score {width: 70px; height: 70px; padding: 15px 0 0; box-sizing: border-box;
+            background: #36353a; text-align: center; font-size: 18px; font-weight: 700;}
+        .rating .score-text {font-size: var(--font-size-base);}
+        .rating .text {width: 100%; height: 70px; padding: 8px 20px 8px 20px; box-sizing: border-box;}
+        .rating .text .text-wrap {width: 100%; height: 100%; overflow: hidden; box-sizing: border-box;}
+
+    .content-description {font-size: var(--font-size-base); max-width: 770px; width: 100%;
         grid-column-start: 1; grid-column-end: 2; grid-row-start: 2; grid-row-end: 3;}
 
 /*SLIDESHOW START*/
     /*This is bad*/
-    .slideshow {width: 770px; margin-bottom: 65px;}
+    .slideshow {width: 100%; margin-bottom: 65px;}
     .slideshow ul {list-style: none outside none; padding-left: 0; margin-bottom:0;}
     .slideshow li {display: block; float: left; margin-right: 0; cursor:pointer;}
     .slideshow img {display: block; height: auto; width: 100%;}
@@ -242,8 +246,9 @@ when after click on tab you are moved on top of page
     .buy-it-block .price {padding: 7px 0 20px;}
     .buy-it-block .price .discount {float: left; width: 84px; height: 35px; margin-right: 13px; padding: 7px 0;
         background-color: #ff003c; font-size: 20px; line-height: 21px; font-weight: 700; text-align: center; box-sizing: border-box;}
-    .buy-it-block .price .current-price {float: left; font-size: 30px; line-height: 35px; font-weight: 700;}
-    .buy-it-block .price .start-price {float: left; margin-left: 13px; font-size: 18px; line-height: 35px; font-weight: 700;
+    .buy-it-block .price .current-price {float: left; font-size: 30px; line-height: 35px; font-weight: 700;
+        margin-right: 13px;}
+    .buy-it-block .price .start-price {float: left; font-size: 18px; line-height: 35px; font-weight: 700;
         text-decoration: line-through; opacity: 0.3;}
     .buy-it-block .price .countdown {float: left; clear: left; padding-top: 10px; font-size: var(--font-size-base);}
     .buy-it-block .price .countdown .time {text-decoration: underline; color: #ff003c;}
