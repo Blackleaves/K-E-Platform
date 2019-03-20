@@ -15,13 +15,13 @@
     .green-button {padding: 0; margin: 0; outline: none; border: none; border-radius: 6px; cursor: pointer;
         box-shadow: 0 3px 0 0 #1d7b4f, inset 0 1px 0 0 #92ffcb; background-image: linear-gradient(to top, #16c172, #27e68b);
         font-size: 16px; font-weight: 700; letter-spacing: 2.3px; text-align: center; color: var(--button-main-color);}
-
+/*
     .tag {float: left; min-width: 56px; padding: 0 5px; text-align: center;
         background: var(--light-background); box-sizing: border-box;}
     .platform-tags .tag {height: 24px; line-height: 24px; margin: 0 18px 15px 0;}
     .platform-tags .tag img {float: left; padding: 3px 5px 0 0;}
     .genre-tags .tag {height: 20px; line-height: 20px; margin: 0 13px 13px 0;}
-
+*/
     /*GLOBAL STYLES END*/
 
     /*HEADER START*/
@@ -72,11 +72,6 @@
     content {display: block; width: 100%; color: var(--text-main-color);}
     content .wrapper {display: block; width: 100%; margin: 0 auto; padding: 20px 15px 10px; box-sizing: border-box;}
 
-        .main-description,
-        .game-description
-        .game-requirements,
-        .how-to-activate {display: none!important;}
-
     /*
     'position: relative' in 'content .wrapper' create an issue for tabset in 'requirements' block
     when after click on tab you are moved on top of page
@@ -91,17 +86,13 @@
             /*.user-score img {}*/
             /*.user-rating-count {}*/
 
-        .good-score {color: #16c172;}
-        .medium-score {color: #ffd000;}
-        .bad-score {color: #ff003c;}
-
         .rating {margin-bottom: 15px;}
             .rating .text {font-size: 12px; padding: 5px 20px 5px 20px; box-sizing: border-box;}
 
 
     /*BUY IT START*/
     .buy-it-wrapper {position: relative; display: block; width: 100%; height: 100%;}
-
+    .on-top, .on-flow, .on-bottom {position: static;}
         /*STYLING*/
         .buy-it-block {display: table; width: 100%; margin-bottom: 20px;}
         .buy-it-block .padding {max-width: 370px; margin: 0 auto;}
@@ -116,105 +107,53 @@
     /*SLIDESHOW END*/
 
     /*DESCRIPTION START*/
-        .main-description {width: 100%; border: 1px solid #4a4c51; border-radius: 4px; padding: 45px 0; box-sizing: border-box;}
-        .main-description .wrap {width: 100%; padding-right: 65px; padding-left: 65px; box-sizing: border-box;}
-        .main-description .title {width: 100%;}
-        .game-info {}
-            .game-info .title {padding-bottom: 15px;}
-            .first-block {float: left; width: 290px;}
+        .main-description {padding: 20px 0; border: none; border-top: 1px solid #4a4c51; box-sizing: border-box;}
+        .main-description .wrap {padding-right: 0; padding-left: 0; box-sizing: border-box;}
+
+        .main-description .game-info {padding-bottom: 35px;}
+        .game-info .title {padding-bottom: 5px;}
+            .first-block, .second-block {float: none; width: 100%; padding: 0;}
             .game-info .developer,
             .game-info .publisher,
-            .game-info .released {width: 100%; padding-bottom: 30px;}
-            .game-info .platforms {width: 100%; padding-bottom: 15px;}
+            .game-info .released {padding-bottom: 20px;}
+            .game-info .platforms {padding-bottom: 5px;}
 
-            .second-block {float: left; width: 50%; width: calc(100% - 300px); padding-left: 10px;}
-            .second-block .title {padding-bottom: 10px;}
-            .second-block .genres {clear: left;}
-            .game-info .tag {}
-
-        .game-description {width: 100%; font-size: var(--font-size-base); line-height: 1.57;}
-        .game-description .title {padding-top: 50px;}
+        .game-description {padding-bottom: 15px;}
         .game-description div {padding-bottom: 35px;}
 
-        .game-description-images {display: block; width: 100%; width: calc(100% + 130px); min-height: 160px;
-            margin: 0 -65px 30px -65px; padding: 0; background: #444;}
+        .game-description-images {width: 100%; min-height: 0; margin: 0 0 30px 0;}
     /*DESCRIPTION END*/
 
     /*REQUIREMENTS START*/
 
-        .game-requirements {}
-        .game-requirements .title {padding: 50px 65px 15px;}
-        .game-requirements {}
+        .game-requirements + .separator {display: none;}
 
-        .tabset > input[type="radio"] {position: absolute; left: -200vw;}
-        .tabset img {float: left; padding: 4px 4px 0 0;}
-        .tabset .tab-panel {display: none;}
+        .tabset > label:first-of-type {margin-left: 5px;}
 
-        .tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
-        .tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
-        .tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
-        .tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
-        .tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
-        .tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {display: block;}
-
-        .tabset > label {position: relative; display: inline-block; width: 120px; height: 30px; padding: 7px 0;
-            margin-right: 6px; background: rgba(153,153,153,.1); cursor: pointer; box-sizing: border-box;
-            font-weight: 500; text-align: center;}
-        .tabset > label:first-of-type {margin-left: 65px;}
-
-        .tabset > label:hover,
-        .tabset > input:focus + label {background: rgba(204,204,204,.1);}
-
-        .tabset > input:checked + label {background: var(--light-background);}
-
-        .tab-panels {background: var(--light-background); padding-bottom: 50px;}
+        .tab-panels {padding: 0 16px 50px 16px; margin: 0 -16px 0 -16px;}
         .tab-panel .subtitle {color: var(--text-second-color); padding: 10px 0;}
-
-        .how-to-activate {}
-        .how-to-activate div {padding-bottom: 25px;}
-        .how-to-activate .title {padding: 50px 0 25px;}
-        .how-to-activate .additional-text {color: var(--text-second-color);}
-        .how-to-activate .link {color: var(--link-main-color);}
-        .how-to-activate ul {list-style-type: none;}
-        .how-to-activate li {padding-bottom: 25px; line-height: 1.57;}
     /*REQUIREMENTS END*/
-
     
     /*CONTENT END*/
 
     /*FOOTER START*/
-    footer {width: 100%; background: #181a1f;
-        color: var(--text-main-color); font-size: var(--font-size-base); font-family: var(--font-main);}
-    footer .wrapper {display: block; width: 1170px; margin: 0 auto;}
+    footer {}
+    footer .wrapper {width: 100%;}
 
-        .first-footer {width: 100%; height: 193px;}
-        .first-footer .wrapper {padding: 70px 0 60px;}
-        .first-footer .subscribe-text {float: left; width: 370px; padding: 6px 0; text-transform: uppercase;}
-        .first-footer .subscribe-email {float: left; width: 400px; height: 60px; border-radius: 4px; border: solid 1.5px #4a4c51;
-            padding: 0 25px; margin: 0 30px; background: transparent; font-size: var(--font-size-base); color: var(--text-second-color);}
-        .first-footer .subscribe-button {float: left; width: 270px; height: 60px;}
+        .first-footer {height: auto;}
+        .first-footer .wrapper {padding: 50px 16px 50px 16px; box-sizing: border-box;}
+        .first-footer .subscribe-text {width: 100%; padding: 0; margin: 0 30px 25px 0;}
+        .first-footer .subscribe-email {width: 100%; max-width: 470px; margin: 0 30px 15px 0;}
 
-        .second-footer {width: 100%; height: 325px;}
-        .second-footer .wrapper {padding: 60px 0 20px;
-            display: grid; grid-template-columns: repeat(4, 1fr); justify-content: space-between; grid-column-gap: 60px;}
-        .second-footer .title {padding-bottom: 30px; font-size: var(--font-size-base);}
-        .second-footer a {display: block; width: 100%; line-height: 2.14; color: var(--text-main-color);}
-        .second-footer a:visited {color: var(--text-main-color);}
-        .second-footer .ways-to-pay a {float: left; width: 43px; height: 30px; border-radius: 4px;
-            background-color: #093689; color: transparent; font-size: 0; margin: 0 10px 10px 0;
-            background-size: auto 30px; background-repeat: no-repeat; background-position: center center;}
+        .second-footer {height: auto;}
+        .second-footer .wrapper {display: block; padding: 35px 16px 50px; box-sizing: border-box;}
+        .second-footer .title {padding-bottom: 15px;}
 
-        .ways-to-pay .mastercard {background-image: url(../images/icons/payments/mastercard.svg);}
-        .ways-to-pay .visa {background-image: url(../images/icons/payments/visa.svg);}
-        .ways-to-pay .maestro {background-image: url(../images/icons/payments/maestro.svg);}
-        .ways-to-pay .paypal {background-image: url(../images/icons/payments/pay_pal.svg);}
-        .ways-to-pay .american_express {background-image: url(../images/icons/payments/american_express.svg);}
+        .second-footer .know-us, .second-footer .contacts, .second-footer .ways-to-pay {padding-bottom: 30px;}
 
-        .copyright {width: 100%; height: 67px; background-color: #121418; line-height: 67px; color: var(--text-second-color);}
+        .copyright {text-align: center;}
 
     /*FOOTER END*/
-
-    footer {display: none;}
 
 }
 
