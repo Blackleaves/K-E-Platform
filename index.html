@@ -37,13 +37,13 @@
         <div class="first-header">
             <div class="wrapper">
                 <div class="brand">
-                    <img src class="logo" />
-                    <span class="brand-name desktop">Platform</span>
+                    <img src class="logo" alt="" />
+                    <span class="brand-name">Platform</span>
                 </div>
                 <input type="search" class="header-search" placeholder="Search" />
-                <div class="login desktop"><a href="">Log In</a></div>
-                <div class="register desktop"><a href="">Register</a></div>
-                <div class="language desktop">EN</div>
+                <div class="login"><a href="">Log In</a></div>
+                <div class="register"><a href="">Register</a></div>
+                <div class="language">EN</div>
                 <a href="" target="_blank"><div class="cart"><img src="static/images/icons/cart.svg" /> 0</div></a>
             </div>
         </div>
@@ -53,12 +53,12 @@
                     <img src="static/images/product/studio-logo.png" class="dev-logo">
                     <span class="dev-name">Konstructors</span>
                 </div>
-                <nav class="desktop">
+                <nav class="">
                     <div class="nav-point"><a href="">Home</a></div>
                     <div class="nav-point"><a href="">Hot Deals</a></div>
                     <div class="nav-point"><a href="">Top Sellers</a></div>
                 </nav>
-                <div class="social desktop">
+                <div class="social">
                     <div class="facebook"><a href="" target="_blank"><img src="static/images/icons/facebook.svg" /> <span class="social-numbers">17,431</span></a></div>
                     <div class="twitter"><a href="" target="_blank"><img src="static/images/icons/twitter.svg" /> <span class="social-numbers">5,819</span></a></div>
                     <div class="youtube"><a href="" target="_blank"><img src="static/images/icons/youtube.svg" /> <span class="social-numbers">246</span></a></div>
@@ -391,8 +391,8 @@
     var rightPadding = 0;
 
     function blockFlow() {
-        if (window.innerWidth < 1200) {
             console.log(window.innerWidth);
+        if (window.innerWidth > 1200) {
             var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             if (winScroll < topSpace) {
                 if (flowState != 0) {
@@ -447,7 +447,7 @@
     $(document).ready(function() {
         // $('.carousel').carousel()
 
-        var thumbNumber = window.innerWidth > 480 ? 5 : 3;
+        var thumbNumber = window.innerWidth > 1024 ? 5 : 3;
         $("#lightSlider").lightSlider({
             item: 1,
             autoWidth: false,

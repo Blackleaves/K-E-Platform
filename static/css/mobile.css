@@ -1,31 +1,118 @@
-@media only screen and (max-width: 700px) {
-        :root {
-        --font-size-base: 14px;
-    }
-
+@media only screen and (max-width: 1200px) {
     html, body {min-width: 320px;}  
 
-    .desktop {display: none!important;}
+    /*HEADER START*/
+    header {width: 100%; background: transparent;}
+    header a, header a:visited, header a:active {color: var(--text-main-color); -webkit-transition: 0.25s; transition: 0.25s;}
 
+    /*FIRST HEADER START*/
+        .first-header .wrapper {padding: 11px 15px;}
+        .header-search {width: 300px;}
+    /*FIRST HEADER END*/
+
+    /*SECOND HEADER START*/
+    /*SECOND HEADER END*/
+    /*HEADER END*/
+
+    /*CONTENT START*/
+    content {display: block; width: 100%; color: var(--text-main-color);}
+    content .wrapper {width: 100%; max-width: 770px;
+        grid-template-columns: 1fr 370px; grid-template-rows: auto; grid-column-gap: 10px; grid-row-gap: 15px;}
+
+    .content-title {height: auto;}
+    .content-title .studio {display: block;}
+    .rating {position: relative; margin: auto; top: 0; bottom: 0;}
+
+    .content-description {grid-column-start: 1; grid-column-end: 3; grid-row-start: auto; grid-row-end: auto;}
+
+    /*SLIDESHOW START*/
+    .slideshow {width: 100%; margin-bottom: 35px;}
+    /*SLIDESHOW END*/
+
+    /*DESCRIPTION START*/
+    /*DESCRIPTION END*/
+
+    /*REQUIREMENTS START*/
+    /*REQUIREMENTS END*/
+
+    /*BUY IT START*/
+    .buy-it-wrapper {position: relative; display: block; width: 100%; height: 100%; grid-column-start: 1; grid-column-end: 3; grid-row-start: auto; grid-row-end: auto;}
+    .on-top, .on-flow, .on-bottom {position: static;}
+        /*STYLING*/
+        .buy-it-block {display: table; width: 100%; margin-bottom: 20px;}
+        .buy-it-block .padding {max-width: 370px; margin: 0 auto;}
+    /*BUY IT END*/
+    /*CONTENT END*/
+
+    /*FOOTER START*/
+    footer .wrapper {width: 100%; max-width: 770px; padding: 0 15px; box-sizing: border-box;}
+
+        .first-footer {height: auto;}
+        .first-footer .wrapper {width: 100%; max-width: 700px; padding: 50px 15px 50px 15px; margin: 0 auto; box-sizing: border-box;}
+        .first-footer .subscribe-text {width: 100%; max-width: 400px; padding: 0; margin: 0 0 25px 0;}
+        .first-footer .subscribe-email {width: 370px; margin: 0 30px 15px 0;}
+
+        .second-footer {height: auto;}
+        .second-footer .wrapper {display: grid; grid-template-columns: auto auto;
+            justify-content: space-around; grid-column-gap: 60px; grid-row-gap: 60px;}
+
+        .copyright .wrapper{width: 100%; max-width: 640px; padding: 0; box-sizing: border-box;}
+    /*FOOTER END*/
+}
+
+@media only screen and (max-width: 1024px) {
+    /*FIRST HEADER START*/
+    .first-header .wrapper {padding: 11px 15px; box-sizing: border-box;
+        display: grid; grid-template-columns: auto 300px 40px; grid-column-gap: 30px;}
+
+        .first-header .login,
+        .first-header .register,
+        .first-header .language {display: none;}
+
+        .cart {text-align: right;}
+        .cart img {float: left; padding: 6px 4px 0 0;}
+    /*FIRST HEADER END*/
+
+    /*SECOND HEADER START*/
+    .second-header {height: 100px;}
+    
+    .second-header .wrapper {width: 100%; padding: 35px 15px; box-sizing: border-box;
+        display: grid; grid-template-columns: auto 28px; grid-column-gap: 10px;}
+        /*.developer {}*/
+        .dev-logo {width: 80px; height: 80px; margin: -25px 15px 0 0; border-radius: 40px;}
+
+        .second-header nav {display: none;}
+        .second-header .social {display: none;}
+
+        .mobile-navigation {display: block; width: 100%; height: 100%; text-align: center;}
+        .mobile-navigation .fa-bars {font-size: 28px;}
+
+        /*Styles for body*/
+        .navigation-click {overflow: hidden;}
+        /*Styles for nav*/
+        /*change this*/
+        .mobile-navigation-click {position: fixed; z-index: 51; background: rgba(0,0,0,.5);
+            top: 0; bottom: 0; left: 0; right: 0;
+            display: grid; grid-template-columns: auto 400px; font-size: 16px; line-height: 28px;}
+        .mobile-navigation-click .fa-bars {display: block; width: 100%; height: 100%; z-index: 52;
+            background: rgba(0,0,0,.5); color: transparent;}
+
+        .mobile-navigation-click .mobile-navigation-popup {display: block; width: 100%; height: 100%;
+            background: var(--link-main-color);}
+    /*SECOND HEADER END*/
+}
+
+@media only screen and (max-width: 770px) {
+    body {display: none;}
+}
+
+@media only screen and (max-width: 700px) {
+    body {display: block;}
     /*GLOBAL STYLES START*/
     .separator {width: 100%; height: 1px; background-color: #4a4c51;}
-
-    .title {font-size: 13px; font-weight: 700; line-height: 1.38; letter-spacing: 6.5px; text-transform: uppercase;}
-
-    .green-button {padding: 0; margin: 0; outline: none; border: none; border-radius: 6px; cursor: pointer;
-        box-shadow: 0 3px 0 0 #1d7b4f, inset 0 1px 0 0 #92ffcb; background-image: linear-gradient(to top, #16c172, #27e68b);
-        font-size: 16px; font-weight: 700; letter-spacing: 2.3px; text-align: center; color: var(--button-main-color);}
-/*
-    .tag {float: left; min-width: 56px; padding: 0 5px; text-align: center;
-        background: var(--light-background); box-sizing: border-box;}
-    .platform-tags .tag {height: 24px; line-height: 24px; margin: 0 18px 15px 0;}
-    .platform-tags .tag img {float: left; padding: 3px 5px 0 0;}
-    .genre-tags .tag {height: 20px; line-height: 20px; margin: 0 13px 13px 0;}
-*/
     /*GLOBAL STYLES END*/
 
     /*HEADER START*/
-
     /*FIRST HEADER START*/
     .first-header {height: 44px; box-sizing: border-box; line-height: 28px;}
 
@@ -33,62 +120,38 @@
         display: grid; grid-template-columns: 40px auto 40px; grid-column-gap: 17px;
         grid-template-rows: 28px;}
 
-        /*.brand {}*/
         .brand .logo {min-width: 40px; height: 40px; border-radius: 20px;   margin: -6px 0 -6px 0;}
+        .brand .brand-name {display: none;}
         .header-search {width: 100%; min-width: 174px;}
     /*FIRST HEADER END*/
 
     /*SECOND HEADER START*/
-
     .second-header {height: 70px; box-sizing: border-box; line-height: 18px;}
     
     .second-header .wrapper {width: 100%; padding: 26px 16px; box-sizing: border-box;
         display: grid; grid-template-columns: auto 20px; grid-column-gap: 10px; grid-template-rows: 18px;}
-        /*.developer {}*/
         .dev-logo {width: 50px; height: 50px; margin: -16px 15px 0 0; border-radius: 25px;}
         .dev-name {font-size: 14px;}
 
-        .mobile-navigation {display: block; width: 100%; height: 100%; text-align: center;}
         .mobile-navigation .fa-bars {font-size: 18px;}
 
+        .mobile-navigation-click {grid-template-columns: auto 250px;}
 
-        /*Styles for body*/
-        .navigation-click {overflow: hidden;}
-        /*Styles for nav*/
-        .mobile-navigation-click {position: fixed; z-index: 51; background: rgba(0,0,0,.5);
-            top: 0; bottom: 0; left: 0; right: 0;
-            display: grid; grid-template-columns: auto 250px;}
-        .mobile-navigation-click .fa-bars {display: block; width: 100%; height: 100%; z-index: 52;
-            background: rgba(0,0,0,.5); color: transparent;}
-
-        .mobile-navigation-click .mobile-navigation-popup {display: block; width: 100%; height: 100%;
-            background: var(--link-main-color);}
 
     /*SECOND HEADER END*/
-
     /*HEADER END*/
 
     /*CONTENT START*/
-    content {display: block; width: 100%; color: var(--text-main-color);}
-    content .wrapper {display: block; width: 100%; margin: 0 auto; padding: 20px 15px 10px; box-sizing: border-box;}
+        content {display: block; width: 100%; color: var(--text-main-color);}
+        content .wrapper {display: block; width: 100%; margin: 0 auto; padding: 20px 15px 10px; box-sizing: border-box;}
 
-    /*
-    'position: relative' in 'content .wrapper' create an issue for tabset in 'requirements' block
-    when after click on tab you are moved on top of page
-    */
         .content-header {padding-bottom: 20px;}
 
         .content-title {height: auto; padding-bottom: 5px;}
-            /*.content-title .game {}*/
             .content-title .studio {display: block;}
-        /*.user-rating {}*/
-            /*.user-score {}*/
-            /*.user-score img {}*/
-            /*.user-rating-count {}*/
 
         .rating {margin-bottom: 15px;}
             .rating .text {font-size: 12px; padding: 5px 20px 5px 20px; box-sizing: border-box;}
-
 
     /*BUY IT START*/
     .buy-it-wrapper {position: relative; display: block; width: 100%; height: 100%;}
@@ -103,20 +166,14 @@
     /*SLIDESHOW START*/
         .slideshow {}
         .lSAction>.lSNext:before, .lSAction>.lSPrev:before {line-height: 250px;}
-        
     /*SLIDESHOW END*/
 
     /*DESCRIPTION START*/
         .main-description {padding: 20px 0; border: none; border-top: 1px solid #4a4c51; box-sizing: border-box;}
         .main-description .wrap {padding-right: 0; padding-left: 0; box-sizing: border-box;}
 
-        .main-description .game-info {padding-bottom: 35px;}
-        .game-info .title {padding-bottom: 5px;}
-            .first-block, .second-block {float: none; width: 100%; padding: 0;}
-            .game-info .developer,
-            .game-info .publisher,
-            .game-info .released {padding-bottom: 20px;}
-            .game-info .platforms {padding-bottom: 5px;}
+        .main-description .game-info {display: table; width: auto; min-width: 290px;
+            margin: 0 auto; padding-bottom: 20px;}
 
         .game-description {padding-bottom: 15px;}
         .game-description div {padding-bottom: 35px;}
@@ -125,7 +182,6 @@
     /*DESCRIPTION END*/
 
     /*REQUIREMENTS START*/
-
         .game-requirements + .separator {display: none;}
 
         .tabset > label:first-of-type {margin-left: 5px;}
@@ -133,7 +189,6 @@
         .tab-panels {padding: 0 16px 50px 16px; margin: 0 -15px 0 -15px;}
         .tab-panel .subtitle {color: var(--text-second-color); padding: 10px 0;}
     /*REQUIREMENTS END*/
-    
     /*CONTENT END*/
 
     /*FOOTER START*/
@@ -141,22 +196,22 @@
     footer .wrapper {width: 100%;}
 
         .first-footer {height: auto;}
-        .first-footer .wrapper {max-width: 430px; padding: 50px 15px 50px 15px; margin: 0 auto; box-sizing: border-box;}
-        .first-footer .subscribe-text {width: 100%; max-width: 300px; padding: 0; margin: 0 30px 25px 0;}
-        .first-footer .subscribe-email {width: 100%; max-width: 400px; margin: 0 30px 15px 0;}
+        .first-footer .wrapper {max-width: 370px; padding: 50px 15px 50px 15px; margin: 0 auto; box-sizing: border-box;}
+        .first-footer .subscribe-text {width: 100%; max-width: 300px; padding: 0; margin: 0 0 25px 0;}
+        .first-footer .subscribe-email {width: 100%; max-width: 370px; margin: 0 0 15px 0;}
 
-        .second-footer {height: auto;}
-        .second-footer .wrapper {display: block; padding: 35px 16px 50px; box-sizing: border-box;}
-        .second-footer .title {padding-bottom: 15px;}
-
-        .second-footer .know-us, .second-footer .contacts, .second-footer .ways-to-pay {padding-bottom: 30px;}
+        .second-footer .wrapper {grid-column-gap: 30px; grid-row-gap: 30px;
+        padding: 35px 15px 35px; box-sizing: border-box;}
 
         .copyright {text-align: center;}
-
     /*FOOTER END*/
-
 } 
-@media only screen and (max-width: 480px) {
+
+@media only screen and (max-width: 550px) {
+    .game-info .first-block, .game-info .second-block {float: none; width: auto; padding: 0;}
+}
+
+@media only screen and (max-width: 510px) {
     /*GLOBAL STYLES START*/
     /*GLOBAL STYLES END*/
 
@@ -179,17 +234,23 @@
     /*SLIDESHOW END*/
 
     /*DESCRIPTION START*/
+        .game-info .title {padding-bottom: 5px;}
+            .first-block, .second-block {float: none; width: 100%; padding: 0;}
+            .game-info .developer,
+            .game-info .publisher,
+            .game-info .released {padding-bottom: 20px;}
+            .game-info .platforms {padding-bottom: 5px;}
     /*DESCRIPTION END*/
 
     /*REQUIREMENTS START*/
-
     /*REQUIREMENTS END*/
-    
     /*CONTENT END*/
 
     /*FOOTER START*/
-        .first-footer .wrapper {max-width: none; padding: 50px 16px 50px 16px; box-sizing: border-box;}
+        .second-footer {height: auto;}
+        .second-footer .wrapper {display: block; width: 290px; margin: 0 auto; box-sizing: border-box;}
+        .second-footer .title {padding-bottom: 15px;}
+
+        .second-footer .know-us, .second-footer .contacts, .second-footer .ways-to-pay {padding-bottom: 30px;}
     /*FOOTER END*/
-
 }
-
