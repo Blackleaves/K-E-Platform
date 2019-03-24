@@ -23,12 +23,6 @@
     <!--     <script src='static/js/generate-slider.js' type="text/javascript"></script>
     <script src='static/js/image-rotator.js' type="text/javascript"></script> -->
 
-    <!-- <link rel="stylesheet" href="static/css/bootstrap.min.css" media="screen"> -->
-    <!-- <script src="static/js/bootstrap.bundle.min.js"></script> -->
-<!--     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" media="screen">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-
-
     <link href='static/css/index.css' rel="stylesheet">
     <link href='static/css/mobile.css' rel="stylesheet">
 </head>
@@ -77,12 +71,6 @@
                             <div class="nav-point register"><a href="">Register</a></div>
                         </div>
                         <div class="mobile-navigation-language">EN</div>
-                        <!-- <div class="mobile-navigation-social">
-                            <div class="facebook"><a href="" target="_blank"><img src="static/images/icons/facebook.svg" /> <span class="social-numbers">17,431</span></a></div>
-                            <div class="twitter"><a href="" target="_blank"><img src="static/images/icons/twitter.svg" /> <span class="social-numbers">5,819</span></a></div>
-                            <div class="youtube"><a href="" target="_blank"><img src="static/images/icons/youtube.svg" /> <span class="social-numbers">246</span></a></div>
-                            <div class="website"><a href="" target="_blank"><img src="static/images/icons/link.svg" /> Website</a></div>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -149,7 +137,6 @@
                     </div>
                 </div>
             </div>
-            <div class="content-description">
                 <div class="slideshow demo">
                     <ul id="lightSlider">
                         <li data-thumb="static/images/product/slide-1.jpg">
@@ -159,7 +146,7 @@
                             <img src="static/images/product/slide-2.jpg" />
                         </li>
                         <li data-thumb="static/images/product/slide-1.jpg">
-                            <img src="static/images/product/slide-1.jpg" />
+                            <iframe  src="https://www.youtube.com/embed/NN-9SQXoi50" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </li>
                         <li data-thumb="static/images/product/slide-2.jpg">
                             <img src="static/images/product/slide-2.jpg" />
@@ -190,43 +177,6 @@
                         </li>
                     </ul>
                 </div>
-                
-
-                <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                  <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-                  </ol>
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img class="d-block w-100" src="static/images/product/slide-1.jpg" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="static/images/product/slide-2.jpg" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="static/images/product/slide-1.jpg" alt="Third slide">
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="static/images/product/slide-2.jpg" alt="Fourth slide">
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="static/images/product/slide-1.jpg" alt="Fifth slide">
-                    </div>
-                  </div>
-                  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
-                </div> -->
-
                 <div class="main-description">
                     <div class="game-info wrap clearfix">
                         <div class="first-block">
@@ -340,7 +290,6 @@
                         <div class="additional-text">You can find additional support for the Steam client <a class="link" href="" target="_blank">here</a>.</div>
                     </div>
                 </div>
-            </div>
         </div>
     </content>
     <footer>
@@ -445,8 +394,6 @@
     }
 
     $(document).ready(function() {
-        // $('.carousel').carousel()
-
         var thumbNumber = window.innerWidth > 1024 ? 5 : 3;
         $("#lightSlider").lightSlider({
             item: 1,
@@ -513,13 +460,11 @@
         }
 
         blockFlow();
-        
-
 
         // Price discount
         $('#discount').append(Math.round( parseFloat($('#current-price .price-tag')[0].innerText) / parseFloat($('#start-price .price-tag')[0].innerText) * 100 ) - 100 + '%');
-
     });
+
     window.onscroll = function() {blockFlow()};
     window.onresize = function() {
         if ( $("content .wrapper")[0].scrollWidth > $(window).width() ) {
