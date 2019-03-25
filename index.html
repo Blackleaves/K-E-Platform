@@ -76,7 +76,6 @@
             </div>
         </div>
     </header>
-
     <content class="clearfix">
         <div class="wrapper">
             <div class="content-header clearfix">
@@ -121,8 +120,7 @@
                             </div>
                         </div>
                         <div class="price clearfix">
-                            <div id="discount" class="discount">
-                                
+                            <div id="discount" class="discount">   
                             </div>
                             <div id="current-price" class="current-price"><span class="currency">$</span><span class="price-tag">15.99</span></div>
                             <div id="start-price" class="start-price"><span class="currency">$</span><span class="price-tag">19.99</span> <span class="sub-currency">USD</span></div>
@@ -333,65 +331,12 @@
         <div class="copyright"><div class="wrapper">© Plarform. All Rights Reserved.</div></div>
     </footer>
 
+<script src="static/js/suplement.js"></script>
 <script>
     var flowState = 0; // 0 - top, 1 - flow, 2 - bottom
     var topSpace = 0; // Height of everything above buy-it-block
     var bottomSpace = 0; // Maximum space on the screen under buy-it-block
     var rightPadding = 0;
-
-    function blockFlow() {
-            console.log(window.innerWidth);
-        if (window.innerWidth > 1200) {
-            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            if (winScroll < topSpace) {
-                if (flowState != 0) {
-                    $('#buy-it-block').addClass('on-top').removeClass('on-flow').removeClass('on-bottom');
-                    flowState = 0;
-                    $('#buy-it-block').css("right",0);
-                }
-            } else {
-                // visible part of footer should be less than bottomSpace
-                if ( getVisibleHeight($('footer')) < bottomSpace ) {
-                    // than buy-it-block flow
-                    if (flowState != 1) {
-                        $('#buy-it-block').addClass('on-flow').removeClass('on-top').removeClass('on-bottom');
-                        flowState = 1;
-                        $('#buy-it-block').css("right",rightPadding);
-                    }
-                } else {
-                    // otherwise buy-it-block should be blocked
-                    if (flowState != 2) {
-                    $('#buy-it-block').addClass('on-bottom').removeClass('on-top').removeClass('on-flow');
-                    flowState = 2;
-                    $('#buy-it-block').css("right",0);
-                    }
-                }
-            }
-        }
-    }
-
-    function getVisibleHeight(visibleObject) {    
-        var $el = $('footer'),
-            scrollTop = $(this).scrollTop(),
-            scrollBot = scrollTop + $(this).height(),
-            elTop = $el.offset().top,
-            elBottom = elTop + $el.outerHeight(),
-            visibleTop = elTop < scrollTop ? scrollTop : elTop,
-            visibleBottom = elBottom > scrollBot ? scrollBot : elBottom;
-        var result = visibleBottom - visibleTop;
-        return result;
-    }
-    function getVisibleWidth(visibleObject) {    
-        var $el = visibleObject,
-            scrollLeft = $(this).scrollLeft(),
-            scrollRight = scrollLeft + $(this).width(),
-            elLeft = $el.offset().left,
-            elRight = elLeft + $el.outerWidth(),
-            visibleLeft = elLeft < scrollLeft ? scrollLeft : elLeft,
-            visibleRight = elRight > scrollRight ? scrollRight : elRight;
-        var result = visibleRight - visibleLeft;
-        return result;
-    }
 
     $(document).ready(function() {
         var thumbNumber = window.innerWidth > 1024 ? 5 : 3;
@@ -448,42 +393,41 @@
         });
 
         // Buy it block flow
-        // Height of everything above buy-it-block
-        topSpace = parseInt($("header")[0].scrollHeight) + parseInt($("content .wrapper").css("padding-top")) + parseInt($("content .wrapper .rating")[0].scrollHeight);
-        // Maximum space on the screen under buy-it-block
-        bottomSpace = parseInt($(window).height()) - parseInt($("content .buy-it-block")[0].scrollHeight) - parseInt($("content .wrapper").css("padding-bottom")) - 20;
-        
-        if ( $("content .wrapper")[0].scrollWidth > $(window).width() ) {
-            rightPadding = getVisibleWidth($("content .buy-it-wrapper")) - $("content .buy-it-wrapper")[0].scrollWidth;
-        } else {
-            rightPadding = ( $(window).width() - $("content .wrapper")[0].scrollWidth ) / 2;
-        }
-
-        blockFlow();
+        if ((window.innerWidth > 1200) || (window.innerHeight > 1200)) {
+            // Block will flow if screen of device is more than 1200 by at least one dimension(tablets could be rotated)
+            calculateTopBottom();
+            calculateRightPadding();
+            blockFlow();
+        };
+        window.onscroll = function() {
+            if (window.innerWidth > 1200) {
+                blockFlow();
+            }
+        };
+        window.onresize = function() {
+            if (window.innerWidth > 1200) {
+                calculateTopBottom();
+                blockFlow();
+                if (flowState == 1) {
+                    calculateRightPadding();
+                    $('#buy-it-block').css("right",rightPadding);
+                }
+            }
+        };
 
         // Price discount
         $('#discount').append(Math.round( parseFloat($('#current-price .price-tag')[0].innerText) / parseFloat($('#start-price .price-tag')[0].innerText) * 100 ) - 100 + '%');
-    });
 
-    window.onscroll = function() {blockFlow()};
-    window.onresize = function() {
-        if ( $("content .wrapper")[0].scrollWidth > $(window).width() ) {
-            rightPadding = getVisibleWidth($("content .buy-it-wrapper")) - $("content .buy-it-wrapper")[0].scrollWidth;
-        } else {
-            rightPadding = ( $(window).width() - $("content .wrapper")[0].scrollWidth ) / 2;
-        }
-        if (flowState == 1) {$('#buy-it-block').css("right",rightPadding);}
-    };
-
-// mobile navigations
-    $('#mobile-navigation .fa-bars').click(function() {
-        if ($('#mobile-navigation').hasClass('mobile-navigation-click')) { 
-            $('#mobile-navigation').removeClass("mobile-navigation-click");
-            $('body').css('width', '100%').css('height', '100%').removeClass('navigation-click');
-        } else {
-            $('#mobile-navigation').addClass('mobile-navigation-click');
-            $('body').addClass('navigation-click');
-        }
+        // mobile navigations
+        $('#mobile-navigation .fa-bars').click(function() {
+            if ($('#mobile-navigation').hasClass('mobile-navigation-click')) { 
+                $('#mobile-navigation').removeClass("mobile-navigation-click");
+                $('body').removeClass('navigation-click');
+            } else {
+                $('#mobile-navigation').addClass('mobile-navigation-click');
+                $('body').addClass('navigation-click');
+            }
+        });
     });
 </script>
 </body>
